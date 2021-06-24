@@ -11,7 +11,7 @@ const mongoose = require("mongoose");
 // const uri = "mongodb+srv://richi:EH6yVSPXehakVA66@cluster0.vrf67.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 // uri with nodejs version 2.2.12 -> works!
-const uri = "mongodb://richi:EH6yVSPXehakVA66@cluster0-shard-00-00.vrf67.mongodb.net:27017,cluster0-shard-00-01.vrf67.mongodb.net:27017,cluster0-shard-00-02.vrf67.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-289q1s-shard-0&authSource=admin&retryWrites=true&w=majority"
+const uri = "mongodb://richi:<password>@cluster0-shard-00-00.vrf67.mongodb.net:27017,cluster0-shard-00-01.vrf67.mongodb.net:27017,cluster0-shard-00-02.vrf67.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-289q1s-shard-0&authSource=admin&retryWrites=true&w=majority"
 
 mongoose.connect(
   uri,
@@ -83,7 +83,3 @@ app.delete("/api/posts/:id", (req, res, next) => {
 });
 
 module.exports = app;
-
-
-// EH6yVSPXehakVA66
-// mongo "mongodb+srv://cluster0.vrf67.mongodb.net/myFirstDatabase" --username richi
