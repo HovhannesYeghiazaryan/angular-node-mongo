@@ -13,6 +13,7 @@ import {PostsService} from "../posts.service";
 
 export class PostListComponent implements OnInit, OnDestroy {
 
+    isLoading: boolean = false;
     posts: PostInterface[] = [];
     // @ts-ignore
     private postSub: Subscription;
@@ -28,8 +29,10 @@ export class PostListComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
+      this.isLoading = true;
       this.postService.getPost();
       this.postSub = this.postService.getPostUpdateListener().subscribe((posts: PostInterface[]) => {
+        this.isLoading = false;
         this.posts = posts;
       });
     }
